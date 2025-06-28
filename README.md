@@ -1,14 +1,34 @@
-This C++ program, titled GroceryTracker, is designed to read a list of grocery item purchases from a file, 
-track their frequency, and offer users an interactive menu to explore that data. The heart of the program is the 
-GroceryTracker class, which encapsulates functionality to read data from a text file, maintain item frequency counts 
-using a std::map, and provide reporting features including a histogram. The constructor accepts two filenames: one for input
-(CS210_Project_Three_Input_File.txt) and one for backup (frequency.dat). Internally, the LoadItemsFromFile() method populates 
-the frequency map, while WriteFrequenciesToBackup() saves a copy for persistence. Key public methods include GetItemFrequency(),
-which returns how often a given item appears, PrintAllItemFrequencies() for listing all item counts, and PrintHistogram(), which
-graphically represents purchase frequency using asterisks. In main(), the program presents an interactive text-based menu allowing
-users to search for an item, display all item frequencies, or view the histogram. Input validation is handled using cin.fail() and numeric_limits 
-to ensure robustness. The use of object oriented programming keeps data and functionality modular, while the map ensures efficient lookups and 
-sorting by item name. The development approach emphasizes clean separation of concerns, reusability and maintainability. Overall, the program 
-demonstrates practical use of C++ fundamentals including file I/O, containers, input validation, and class design. It provides a scalable and 
-user-friendly way to analyze item frequency data from grocery transactions, making it suitable for expansion into more complex inventory or
-sales tracking systems.
+GroceryTracker is a command-line application designed to help users record, view, and analyze their purchases. It solves the common problem of lost receipts and unclear spending habits by offering a simple, text-based interface to track items, prices, dates and categories, allowing users to quickly review what has been bought and how much they've spent over time.
+
+- WHAT THE PROJECT DOES WELL
+- Used encapsulation via a GroceryTracker class to cleanly separate data management from user interaction.
+- Clear logic for reading, processing, and outputting frequency data
+- Provided good error handling for file operations and user input (e.g., using cin.fail() and numeric_limits).
+- Cleanly structured methods like LoadItemsFromFile, WriteFrequenciesToBackup, and PrintHistogram.
+
+- AREAS FOR IMPROVEMENT AND IMPACT
+- Data validation and error handling: Add more rigorous checks for date formats, price values, and required fields to help avoid corruption or crashes and improve reliability
+- Separation of concerns: Move menu logic to its own function/class to improve modularity and make the program easier to expand
+- Dynamic file inputs: Allow user to specify input/output file paths to add flexibility for reuse
+- Case insensitive item search: normalize input using transform() to prevent duplicate item counts to capitalization differences
+- Unit testing support: Modularize LoadItemsFromFile and make it testable with mock data
+
+- CHALLENGING PARTS I OVERCAME
+- Ensuring input validation for menu options (handled via cin.fail() and clearing the stream).
+- Displaying a formatted histogram using setw() and loops
+- Managing file I/O while handling possible failures
+
+- TOOLS AND RESOURCES REFLECTED
+- Standard Template Library (map, string, fstream) to manage input and output
+- iomanip and limits for clean formatting and safe input handling
+
+- TRANSFERABLE SKILLS
+- Working with file input/output and handling edge cases
+- Using associative containers like map to count frequencies
+- Menu-driven console interaction logic
+- Writing modular and well-documented code, which is critical in object-oriented programming and real-world applications
+
+- CODE MAINTAINABILITY AND READABILITY
+- Features descriptive comments and uses clear method names for readability
+- Features consistent indentation and naming conventions
+- By encapsulating logic in methods, the program is easy to modify or extend later
