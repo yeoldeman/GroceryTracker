@@ -1,8 +1,3 @@
-Erik Olsen
-6/21/2025
-CS-210
-Documentation for GroceryTracker
-
 This C++ program, titled GroceryTracker, is designed to read a list of grocery item purchases from a file, 
 track their frequency, and offer users an interactive menu to explore that data. The heart of the program is the 
 GroceryTracker class, which encapsulates functionality to read data from a text file, maintain item frequency counts 
